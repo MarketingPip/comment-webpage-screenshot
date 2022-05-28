@@ -184,16 +184,7 @@ if __name__ == '__main__':
 
     # If the workflow was not triggered by a pull request
     # Exit the script with code 1.
-    if (
-        configuration.GITHUB_EVENT_NAME
-        not in configuration.SUPPORTED_EVENT_NAMES
-    ):
-        print_message(
-            'This action only works for '
-            f'"{configuration.SUPPORTED_EVENT_NAMES}" event(s)',
-            message_type='error'
-        )
-        sys.exit(1)
+   
 
     # Initialize the Webpage Screenshot Action
     action = WebpageScreenshotAction(configuration)
