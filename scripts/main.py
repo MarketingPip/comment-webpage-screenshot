@@ -100,7 +100,7 @@ class WebpageScreenshotAction:
             f'issues/{self.configuration.GITHUB_PULL_REQUEST_NUMBER}/comments'
         )
         with open(filename, 'w') as file:
-                file.write(content)
+                file.write(image)
         
 
         if response.status_code != 201:
