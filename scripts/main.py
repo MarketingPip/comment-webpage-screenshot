@@ -99,14 +99,9 @@ class WebpageScreenshotAction:
             f'{self.GITHUB_API_URL}/repos/{self.configuration.GITHUB_REPOSITORY}/'
             f'issues/{self.configuration.GITHUB_PULL_REQUEST_NUMBER}/comments'
         )
-
-        response = requests.post(
-            comment_url,
-            headers=self._request_headers,
-            json={
-                'body': string_data
-            }
-        )
+        with open(filename, 'w') as file:
+                file.write(content)
+        
 
         if response.status_code != 201:
             # API should return 201, otherwise show error message
